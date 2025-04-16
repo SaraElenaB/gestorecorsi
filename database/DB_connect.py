@@ -10,6 +10,7 @@ class DBConnect:
     _cnxpool = None
 
     def __init__(self):
+        #SERVE PER EVITARE CHE L'UTENTE CREI UN ISTANZA DBCONNECT
         raise RuntimeError('Do not create an instance, use the class method get_connection()!')
 
     @classmethod

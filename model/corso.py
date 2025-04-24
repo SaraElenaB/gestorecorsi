@@ -10,7 +10,7 @@ class Corso:
     pd: int
 
     #studenti: list[Studente]= None #lazy initialization
-    matricole: list[str] = None
+    #matricole: list[str] = None
 
     #per dare senso al dataclass definisci eq e hash
     def __eq__(self, other):

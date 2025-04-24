@@ -40,12 +40,12 @@ class View(ft.UserControl):
         self.btnPrintCorsiPD = ft.ElevatedButton( text="Stampa corsi", width=300,
                                                   on_click=self._controller.handlePrintCorsiPD)
         self.btnPrintIscrittiCorsiPD =ft.ElevatedButton( text="Stampa iscitti", width=300,
-                                                  on_click=self._controller.handlePrintIscrittiCorsiPD)
-        row1= ft.Row( [self.ddPeriodoDidattico, self.btnPrintCorsiPD, self.btnPrintIscrittiCorsiPD])
+                                                         on_click=self._controller.handlePrintIscrittiCorsiPD)
+        row1= ft.Row( [self.ddPeriodoDidattico, self.btnPrintCorsiPD, self.btnPrintIscrittiCorsiPD], alignment=ft.MainAxisAlignment.CENTER)
 
         #row2
-        self.ddCodins = ft.Dropdown( label="Corso", width=200, expand = True,
-                                     )
+        self.ddCodins = ft.Dropdown( label="Corso", width=200, expand = True)
+
             #PROBLEMA: noi abbiamo implementato questo metodo inserendo l'oggetto corso ma quando prendiamo il value lo vede come una stringa
             # quindi dobbiamo fare questi passaggi:
             #        1. on_change --> in quanto viene chiamato quando facciamo una selezione
@@ -55,9 +55,9 @@ class View(ft.UserControl):
 
         self.btnPrintIscrittiCodins = ft.ElevatedButton( text="Stampa iscritti al corso", width=300,
                                                   on_click=self._controller.handlePrintIscrittiCodins)
-        self.btnPrintCDSCodins= ft.ElevatedButton( text="Stampa CDS afferenti", width=300,
+        self.btnPrintCDSCodins= ft.ElevatedButton( text="Stampa CDS per il corso", width=300,
                                                   on_click=self._controller.handlePrintCDSCodins)
-        row2= ft.Row( [self.ddCodins, self.btnPrintIscrittiCodins, self.btnPrintCDSCodins])
+        row2= ft.Row( [self.ddCodins, self.btnPrintIscrittiCodins, self.btnPrintCDSCodins], alignment=ft.MainAxisAlignment.CENTER)
 
         #Output
         self.lvTxtOut= ft.ListView(expand=True)
